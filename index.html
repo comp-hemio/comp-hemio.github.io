@@ -1,0 +1,56 @@
+---
+layout: home
+author_profile: true
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
+  overlay_image: /assets/images/header-piano.jpg
+  actions:
+    - label: "Listen on Spotify"
+      url: "https://open.spotify.com/artist/YOUR_SPOTIFY_ID"
+excerpt: "Contemporary classical and minimalist piano compositions.<br/>New piece released monthly."
+feature_row:
+  - image_path: /assets/images/water-memories-cover.jpg
+    alt: "Water Memories"
+    title: "Latest Release: Water Memories"
+    excerpt: "December 2025 - A contemplative journey through fluid memories and time."
+    url: "/music/water-memories/"
+    btn_label: "Listen Now"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/monthly-series.jpg
+    alt: "Hemio Monthly Series"
+    title: "Hemio Monthly Series"
+    excerpt: "One new piano composition every month. Exploring minimalism, nature, and contemplation."
+    url: "/music/"
+    btn_label: "Explore All Music"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/writing.jpg
+    alt: "Writing"
+    title: "Compositional Essays"
+    excerpt: "Philosophical reflections on music, composition, and the creative process."
+    url: "/writing/"
+    btn_label: "Read Essays"
+    btn_class: "btn--primary"
+---
+
+{% include feature_row %}
+
+## About Hemio
+
+Contemporary piano composer creating minimalist and contemplative compositions. Inspired by Philip Glass, Steve Reich, Erik Satie, Max Richter, and Nils Frahm.
+
+Through the Hemio Monthly Series, I release one new piano piece each month, exploring themes of nature, time, memory, and existence.
+
+[Learn more about my music →](/about/)
+
+## Recent Writing
+
+{% for post in site.posts limit:3 %}
+  <article>
+    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <p class="page__meta">{{ post.date | date: "%B %d, %Y" }}</p>
+    <p>{{ post.excerpt }}</p>
+  </article>
+{% endfor %}
+
+[View all writing →](/writing/)

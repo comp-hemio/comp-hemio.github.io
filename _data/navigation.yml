@@ -1,0 +1,21 @@
+# Main navigation links
+main:
+  - title: "Music"
+    url: /music/
+  - title: "Writing"
+    url: /writing/
+  - title: "About"
+    url: /about/
+  - title: "Archive"
+    url: /archive/
+
+# Language navigation (for future multilingual support)
+languages:
+  - title: "EN"
+    url: /en/
+  - title: "KO"
+    url: /ko/
+  - title: "JA"
+    url: /ja/
+  - title: "ES"
+    url: /es/

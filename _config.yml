@@ -1,0 +1,101 @@
+# Site Settings
+title: "Hemio"
+subtitle: "Contemporary Piano Composer"
+name: "Hemio"
+description: "Contemporary classical and minimalist piano compositions. Monthly releases of contemplative piano music."
+url: "https://comp-hemio.github.io"
+baseurl: ""
+repository: "comp-hemio/comp-hemio.github.io"
+
+# Author
+author:
+  name: "Hemio"
+  bio: "Piano composer creating contemporary classical and minimalist compositions. Releasing one piece monthly through the Hemio Monthly Series."
+  avatar: "/assets/images/avatar.jpg"
+  links:
+    - label: "Spotify"
+      icon: "fab fa-fw fa-spotify"
+      url: "https://open.spotify.com/artist/YOUR_SPOTIFY_ID"
+    - label: "Apple Music"
+      icon: "fab fa-fw fa-apple"
+      url: "YOUR_APPLE_MUSIC_URL"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "YOUR_YOUTUBE_URL"
+
+# Build settings
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-include-cache
+  - jekyll-paginate
+
+# Site Footer
+footer:
+  links:
+    - label: "Spotify"
+      icon: "fab fa-fw fa-spotify"
+      url: "https://open.spotify.com/artist/YOUR_SPOTIFY_ID"
+    - label: "DistroKid"
+      icon: "fas fa-fw fa-music"
+      url: "YOUR_DISTROKID_URL"
+
+# Reading Files
+include:
+  - _pages
+  - .htaccess
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# SEO
+lang: en-US
+locale: en-US
+
+# Analytics (optional - add later)
+# analytics:
+#   provider: "google-gtag"
+#   google:
+#     tracking_id: "YOUR_TRACKING_ID"
+
+# Pagination
+paginate: 10
+paginate_path: /writing/page:num/
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  syntax_highlighter: rouge
