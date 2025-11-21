@@ -15,13 +15,13 @@ author:
   links:
     - label: "Spotify"
       icon: "fab fa-fw fa-spotify"
-      url: "https://open.spotify.com/artist/YOUR_SPOTIFY_ID"
+      url: "https://open.spotify.com/artist/2056Yz5AikkYkjm3HYaVNO"
     - label: "Apple Music"
       icon: "fab fa-fw fa-apple"
-      url: "YOUR_APPLE_MUSIC_URL"
+      url: "https://music.apple.com/kr/artist/%ED%97%A4%EB%AF%B8%EC%98%A4/943791123"
     - label: "YouTube"
       icon: "fab fa-fw fa-youtube"
-      url: "YOUR_YOUTUBE_URL"
+      url: "https://www.youtube.com/@Hemio"
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
