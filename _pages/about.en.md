@@ -33,19 +33,11 @@ I believe the ultimate goal of all art is empathy. I sincerely hope that the bea
 
 Through the Hemio Monthly Series, I release one new piano piece each month via DistroKid to all major streaming platforms. These contemporary classical and minimalist compositions explore themes of time, memory, nature, and existence.
 
-In an era where streaming platforms push for shorter songs, I deliberately compose pieces that are 6+ minutes long. This allows the music to breathe, develop, and create an immersive experience for the listener.
 
 ## Musical Influences
 
 My work is deeply influenced by **Philip Glass**, **Steve Reich**, **Erik Satie**, **Arvo Pärt**, **Max Richter**, and **Nils Frahm**.
 
-## Collaborators
-
-My compositions are brought to life by talented pianists including **Onure** and others.
-
-## Reach
-
-The music has reached listeners in 144 countries across all major platforms, generating nearly 60,000 plays.
 
 ## Contact
 
