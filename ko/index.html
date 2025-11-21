@@ -1,0 +1,161 @@
+---
+layout: home
+permalink: /ko/
+ref: home
+lang: ko
+author_profile: true
+---
+
+<script>
+// Store language preference
+localStorage.setItem('preferredLanguage', 'ko');
+</script>
+
+<header class="hero">
+  <h1>Hemio</h1>
+  <p class="subtitle">현대 피아노 작곡가</p>
+  <p>매달 발매되는 명상적 피아노 음악</p>
+  <div class="hero-actions">
+    <a href="https://open.spotify.com/artist/YOUR_SPOTIFY_ID" class="btn btn-primary">Spotify에서 듣기</a>
+  </div>
+</header>
+
+<section class="featured-release">
+  <h2>최신 발매작</h2>
+  <div class="release-card">
+    <img src="/assets/images/water-memories-cover.jpg" alt="Water Memories" style="max-width: 300px;">
+    <h3>Water Memories</h3>
+    <p>2025년 12월 - 유동적인 기억과 시간을 통한 명상적 여정.</p>
+    <a href="/ko/music/" class="btn">지금 듣기</a>
+  </div>
+</section>
+
+<section class="about-preview">
+  <h2>Hemio 소개</h2>
+  <p>미니멀리스트적이고 명상적인 작품을 만드는 현대 피아노 작곡가. Philip Glass, Steve Reich, Erik Satie, Max Richter, Nils Frahm으로부터 영감을 받았습니다.</p>
+  <p>Hemio 월간 시리즈를 통해 매달 새로운 피아노 곡을 발매하며, 자연, 시간, 기억, 존재의 주제를 탐구합니다.</p>
+  <a href="/ko/about/">더 알아보기 →</a>
+</section>
+
+<section class="recent-writing">
+  <h2>최근 글</h2>
+  {% assign ko_posts = site.posts | where: "lang", "ko" | sort: 'date' | reverse %}
+  {% for post in ko_posts limit:3 %}
+    <article>
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p class="post-meta">{{ post.date | date: "%Y년 %m월 %d일" }}</p>
+      <p>{{ post.excerpt }}</p>
+    </article>
+  {% endfor %}
+  <a href="/ko/writing/">모든 글 보기 →</a>
+</section>
+
+<div class="language-selector-home">
+  <p>🌐 언어 선택:</p>
+  <a href="/" class="lang-btn">English</a>
+  <a href="/ko/" class="lang-btn active">한국어</a>
+  <a href="/es/" class="lang-btn">Español</a>
+  <a href="/ja/" class="lang-btn">日本語</a>
+</div>
+
+<style>
+.hero {
+  text-align: center;
+  padding: 3em 0;
+  border-bottom: 1px solid #eee;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 0.2em;
+}
+
+.hero .subtitle {
+  font-size: 1.3em;
+  color: #666;
+  margin-bottom: 0.5em;
+}
+
+.hero-actions {
+  margin-top: 1.5em;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7em 1.5em;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #333;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-primary {
+  background: #1DB954;
+}
+
+.btn-primary:hover {
+  background: #1ed760;
+}
+
+.featured-release, .about-preview, .recent-writing {
+  margin: 3em 0;
+  padding: 2em 0;
+}
+
+.release-card {
+  text-align: center;
+  padding: 2em;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.release-card img {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.language-selector-home {
+  margin: 3em 0;
+  padding: 2em;
+  background: #f5f5f5;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.lang-btn {
+  display: inline-block;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s;
+}
+
+.lang-btn:hover, .lang-btn.active {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+  text-decoration: none;
+}
+
+article {
+  margin: 1.5em 0;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #eee;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 0.9em;
+}
+</style>

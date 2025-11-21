@@ -1,0 +1,70 @@
+{% assign posts = site.posts | where:"ref", page.ref | sort: 'lang' %}
+{% assign pages = site.pages | where:"ref", page.ref | sort: 'lang' %}
+{% assign totalPosts = posts | size %}
+{% assign totalPages = pages | size %}
+
+{% if totalPosts > 0 or totalPages > 0 %}
+<div class="language-switcher">
+  <span class="lang-label">🌐 </span>
+  {% if totalPosts > 0 %}
+    {% for post in posts %}
+      {% if post.lang == page.lang %}
+        <span class="lang-active">{{ post.lang | upcase }}</span>
+      {% else %}
+        <a href="{{ site.baseurl }}{{ post.url }}" class="lang-link">{{ post.lang | upcase }}</a>
+      {% endif %}
+      {% unless forloop.last %}<span class="lang-separator">|</span>{% endunless %}
+    {% endfor %}
+  {% endif %}
+  
+  {% if totalPages > 0 %}
+    {% for p in pages %}
+      {% if p.lang == page.lang %}
+        <span class="lang-active">{{ p.lang | upcase }}</span>
+      {% else %}
+        <a href="{{ site.baseurl }}{{ p.url }}" class="lang-link">{{ p.lang | upcase }}</a>
+      {% endif %}
+      {% unless forloop.last %}<span class="lang-separator">|</span>{% endunless %}
+    {% endfor %}
+  {% endif %}
+</div>
+
+<style>
+.language-switcher {
+  margin: 1em 0;
+  padding: 0.5em;
+  text-align: right;
+  font-size: 0.9em;
+}
+
+.lang-label {
+  margin-right: 0.5em;
+}
+
+.lang-active {
+  font-weight: bold;
+  color: #000;
+  padding: 0.2em 0.5em;
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.lang-link {
+  padding: 0.2em 0.5em;
+  text-decoration: none;
+  color: #0066cc;
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+
+.lang-link:hover {
+  background: #f0f0f0;
+  text-decoration: none;
+}
+
+.lang-separator {
+  margin: 0 0.3em;
+  color: #ccc;
+}
+</style>
+{% endif %}

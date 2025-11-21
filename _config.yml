@@ -82,6 +82,12 @@ defaults:
 lang: en-US
 locale: en-US
 
+# Multilingual Support
+languages: ["en", "ko", "es", "ja"]
+default_lang: "en"
+exclude_from_localization: ["assets", "files"]
+parallel_localization: true
+
 # Analytics (optional - add later)
 # analytics:
 #   provider: "google-gtag"

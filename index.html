@@ -1,56 +1,189 @@
 ---
 layout: home
 author_profile: true
-header:
-  overlay_color: "#000"
-  overlay_filter: "0.5"
-  overlay_image: /assets/images/header-piano.jpg
-  actions:
-    - label: "Listen on Spotify"
-      url: "https://open.spotify.com/artist/YOUR_SPOTIFY_ID"
-excerpt: "Contemporary classical and minimalist piano compositions.<br/>New piece released monthly."
-feature_row:
-  - image_path: /assets/images/water-memories-cover.jpg
-    alt: "Water Memories"
-    title: "Latest Release: Water Memories"
-    excerpt: "December 2025 - A contemplative journey through fluid memories and time."
-    url: "/music/water-memories/"
-    btn_label: "Listen Now"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/monthly-series.jpg
-    alt: "Hemio Monthly Series"
-    title: "Hemio Monthly Series"
-    excerpt: "One new piano composition every month. Exploring minimalism, nature, and contemplation."
-    url: "/music/"
-    btn_label: "Explore All Music"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/writing.jpg
-    alt: "Writing"
-    title: "Compositional Essays"
-    excerpt: "Philosophical reflections on music, composition, and the creative process."
-    url: "/writing/"
-    btn_label: "Read Essays"
-    btn_class: "btn--primary"
 ---
 
-{% include feature_row %}
+<script>
+// Language detection and redirect
+(function() {
+  // Check if already on a language-specific page
+  var currentPath = window.location.pathname;
+  if (currentPath.match(/^\/(en|ko|es|ja)\//)) {
+    return; // Already on a language page
+  }
+  
+  // Get browser language
+  var userLang = navigator.language || navigator.userLanguage;
+  var langCode = userLang.split('-')[0]; // Get 'ko' from 'ko-KR'
+  
+  // Map to supported languages (default to 'en')
+  var supportedLangs = ['en', 'ko', 'es', 'ja'];
+  var targetLang = supportedLangs.includes(langCode) ? langCode : 'en';
+  
+  // Only redirect from root
+  if (currentPath === '/' || currentPath === '/index.html') {
+    // Check if there's a stored preference
+    var storedLang = localStorage.getItem('preferredLanguage');
+    if (storedLang && supportedLangs.includes(storedLang)) {
+      targetLang = storedLang;
+    }
+    
+    // Redirect to language-specific home
+    if (targetLang !== 'en') {
+      window.location.href = '/' + targetLang + '/';
+    }
+  }
+})();
+</script>
 
-## About Hemio
+<!-- English Homepage Content (default) -->
 
-Contemporary piano composer creating minimalist and contemplative compositions. Inspired by Philip Glass, Steve Reich, Erik Satie, Max Richter, and Nils Frahm.
+<header class="hero">
+  <h1>Hemio</h1>
+  <p class="subtitle">Contemporary Piano Composer</p>
+  <p>Monthly releases of contemplative piano music</p>
+  <div class="hero-actions">
+    <a href="https://open.spotify.com/artist/YOUR_SPOTIFY_ID" class="btn btn-primary">Listen on Spotify</a>
+  </div>
+</header>
 
-Through the Hemio Monthly Series, I release one new piano piece each month, exploring themes of nature, time, memory, and existence.
+<section class="featured-release">
+  <h2>Latest Release</h2>
+  <div class="release-card">
+    <img src="/assets/images/water-memories-cover.jpg" alt="Water Memories" style="max-width: 300px;">
+    <h3>Water Memories</h3>
+    <p>December 2025 - A contemplative journey through fluid memories and time.</p>
+    <a href="/music/" class="btn">Listen Now</a>
+  </div>
+</section>
 
-[Learn more about my music →](/about/)
+<section class="about-preview">
+  <h2>About Hemio</h2>
+  <p>Contemporary piano composer creating minimalist and contemplative compositions. Inspired by Philip Glass, Steve Reich, Erik Satie, Max Richter, and Nils Frahm.</p>
+  <p>Through the Hemio Monthly Series, I release one new piano piece each month, exploring themes of nature, time, memory, and existence.</p>
+  <a href="/about/">Learn more →</a>
+</section>
 
-## Recent Writing
+<section class="recent-writing">
+  <h2>Recent Writing</h2>
+  {% assign en_posts = site.posts | where: "lang", "en" | sort: 'date' | reverse %}
+  {% for post in en_posts limit:3 %}
+    <article>
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+      <p>{{ post.excerpt }}</p>
+    </article>
+  {% endfor %}
+  <a href="/writing/">View all writing →</a>
+</section>
 
-{% for post in site.posts limit:3 %}
-  <article>
-    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <p class="page__meta">{{ post.date | date: "%B %d, %Y" }}</p>
-    <p>{{ post.excerpt }}</p>
-  </article>
-{% endfor %}
+<!-- Language Selector -->
+<div class="language-selector-home">
+  <p>🌐 Choose language:</p>
+  <a href="/" class="lang-btn active">English</a>
+  <a href="/ko/" class="lang-btn">한국어</a>
+  <a href="/es/" class="lang-btn">Español</a>
+  <a href="/ja/" class="lang-btn">日本語</a>
+</div>
 
-[View all writing →](/writing/)
+<style>
+.hero {
+  text-align: center;
+  padding: 3em 0;
+  border-bottom: 1px solid #eee;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 0.2em;
+}
+
+.hero .subtitle {
+  font-size: 1.3em;
+  color: #666;
+  margin-bottom: 0.5em;
+}
+
+.hero-actions {
+  margin-top: 1.5em;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7em 1.5em;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #333;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-primary {
+  background: #1DB954;
+}
+
+.btn-primary:hover {
+  background: #1ed760;
+}
+
+.featured-release, .about-preview, .recent-writing {
+  margin: 3em 0;
+  padding: 2em 0;
+}
+
+.release-card {
+  text-align: center;
+  padding: 2em;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.release-card img {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.language-selector-home {
+  margin: 3em 0;
+  padding: 2em;
+  background: #f5f5f5;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.lang-btn {
+  display: inline-block;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s;
+}
+
+.lang-btn:hover, .lang-btn.active {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+  text-decoration: none;
+}
+
+article {
+  margin: 1.5em 0;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #eee;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 0.9em;
+}
+</style>
