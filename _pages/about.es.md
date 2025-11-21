@@ -37,13 +37,6 @@ A través de la Serie Mensual de Hemio, lanzo una nueva pieza de piano cada mes 
 
 Mi trabajo está profundamente influenciado por **Philip Glass**, **Steve Reich**, **Erik Satie**, **Arvo Pärt**, **Max Richter** y **Nils Frahm**.
 
-## Colaboradores
-
-Mis composiciones cobran vida gracias a pianistas talentosos incluyendo **Onure** y otros.
-
-## Alcance
-
-La música ha alcanzado oyentes en 144 países en todas las plataformas principales, generando casi 60,000 reproducciones.
 
 ## Contacto
 
