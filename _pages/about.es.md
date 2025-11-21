@@ -33,8 +33,6 @@ Creo que el objetivo final de todo arte es la empatía. Espero sinceramente que 
 
 A través de la Serie Mensual de Hemio, lanzo una nueva pieza de piano cada mes vía DistroKid a todas las principales plataformas de streaming. Estas composiciones minimalistas y clásicas contemporáneas exploran temas de tiempo, memoria, naturaleza y existencia.
 
-En una era donde las plataformas de streaming favorecen canciones más cortas, deliberadamente compongo piezas de más de 6 minutos. Esto permite que la música respire, se desarrolle y cree una experiencia inmersiva para el oyente.
-
 ## Influencias Musicales
 
 Mi trabajo está profundamente influenciado por **Philip Glass**, **Steve Reich**, **Erik Satie**, **Arvo Pärt**, **Max Richter** y **Nils Frahm**.
